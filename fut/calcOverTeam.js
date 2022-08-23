@@ -2,10 +2,11 @@ function getOverRandom(over) {
 
     let calcOver = 0
     let average = 0
+
     function calc() {
         for (let count = 1; average <= over; count++) {
-            let randomOver = Math.random() * (90 - 75 + 1) + 75
-            if (average <= over) {
+            let randomOver = Math.random() * (89 - 75 + 1) + 75
+            if (average != over) {
                 average += (calcOver + randomOver) / 11
                 if(average > over){
                     break
@@ -19,4 +20,4 @@ function getOverRandom(over) {
     return calc()
 }
 
-getOverRandom(88)
+getOverRandom(85)
