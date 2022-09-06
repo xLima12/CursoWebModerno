@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
+    <title>Gerenciamento</title>
+    <style>
+
+        body{
+            font-family: 'Dosis', 'sans-serif';
+            background-color: lightgray;
+            margin: 0;
+        }
+
+        .div-main{
+            background-color: #555;
+            display: flex;
+            flex-direction: row;
+            border-radius: 0 0 25px 25px;
+            border: solid 1px #59127f;
+        }
+
+        .div-logo {
+            height: 80px;
+            margin: 0 10px 0 15px;
+        }
+
+        .div-logo img{
+            padding: 7px;
+            height: 100%;
+        }
+
+        .menu ul{
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li{
+            display: inline-block;
+            padding: 10px;
+            margin: 20px 15px 0 0;
+            vertical-align: top;
+        }
+
+        .menu a{
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .menu a:hover,
+        a.selected {
+            color: #eee;
+            background-color: #59127f;
+            border-radius: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="main">
+        <div class="div-main">
+            <div class="div-logo">
+                <a href="#Dashboard">
+                    <img src="./assets/img/logo.png" alt="logo">
+                </a>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a href="#Custos">Custos</a>
+                    </li>
+                    <li>
+                        <a href="#Ganhos">Ganhos</a>
+                    </li>
+                    <li>
+                        <a href="pages/presenca.html">Presença</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</body>
+<script>
+    
+    window.onhashchange = function(e) {
+
+        const oldURL = e.oldURL.split('#')[1]
+
+        const newURL = e.newURL.split('#')[1]
+
+        const oldLink = document.querySelector(`.menu a[href='#${oldURL}']`)
+        const newLink = document.querySelector(`.menu a[href='#${newURL}']`)
+
+        oldLink && oldLink.classList.remove('selected')
+        newLink && newLink.classList.add('selected')
+
+    }
+
+</script>
+</html>
