@@ -1,0 +1,15 @@
+body {
+    background-image: url('../img/Fundo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+}
+
+div {
+    height: 100px;
+}
+
+div img {
+    height: 100%;
+}
