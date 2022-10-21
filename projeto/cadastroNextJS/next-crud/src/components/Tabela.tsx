@@ -11,6 +11,7 @@ export default function Tabela(props: TabelaProps) {
 
     const exibirAcoes = props.clienteExcluido && props.clienteSelecionado
 
+    //Cria o cabeçalho da tabela
     function renderizarCabecalho() {
         return (
             <tr>
@@ -22,7 +23,7 @@ export default function Tabela(props: TabelaProps) {
         )
     }
 
-    
+    //Cria as linhas de dados na tabela
     function renderizarDados() {
         return props.cliente?.map((cliente, i) => {
             return (
@@ -63,6 +64,7 @@ export default function Tabela(props: TabelaProps) {
     }
 
     return (
+        //Retorna a tabela completa com cabeçalho, dados e estilo
         <table className="w-full rounded-xl overflow-hidden">
             <thead className={`
             text-gray-100

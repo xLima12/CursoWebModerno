@@ -8,8 +8,32 @@
 </head>
 <body class="exercicio">
 
+    <div id="app">
+        <p>{{link}}</p>
+        <p><a href="{{link}}">pesquisa?</a></p>
+        <p><a v-bind:href="link">pesquisa</a></p>
+        <p><a :href="link">pesquisa</a></p>
+        <p>
+            <input type="text" v-model="nome"><br>
+            <span>{{nome}}</span>
+        </p>
+        <iframe src="teste-page.html" name="teste" width="800" height="500"></iframe>
+        <p><a :href="link" target="teste">pesquisa</a></p>
+    </div>
+
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                nome: "Maria",
+                link: "https://google.com.br"
+            },
+            watch: {
+                nome(novoValor) {
+                    console.log(novoValor.toUpperCase())
+                }
+            }
+        })
     </script>
 </body>
 </html>
